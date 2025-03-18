@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="utils.js"></script>
+</head>
+
+<body>
+  <!-- PLEASE STOP USING DIV. USE SEMANTICS. THANKS <3 -->
+  <article>
+    <section class="whole-site">
+      <nav>
+        <h1>Budget Calculator</h1>
+      </nav>
+      <section class="box">
+        <section class="top">
+          <h2>Your Monthly Expenses</h2>
+          <div id="root">
+            <input id="career" list="careers" />
+            <datalist id="careers">
+
+            </datalist>
+          </div>
+        </section>
+        <section class="info">
+          <article class="inputs">
+            <section class="Expenses">
+              <section>
+                <div class="circle red"></div>
+                <input type="number" placeholder="Housing" id="housing">
+              </section>
+
+              <section>
+                <div class="circle cyan"></div>
+                <input type="number" placeholder="Utilities" id="utilities">
+              </section>
+
+              <section>
+                <div class="circle green"></div>
+                <input type="number" placeholder="Groceries" id="groceries">
+              </section>
+
+              <section>
+                <div class="circle orange"></div>
+                <input type="number" placeholder="Transportation" id="transportation">
+              </section>
+              <section>
+                <div class="circle purple"></div>
+                <input type="number" placeholder="Insurance" id="insurance">
+              </section>
+
+              <section>
+                <div class="circle yellow"></div>
+                <input type="number" placeholder="Phone" id="phone">
+              </section>
+
+              <section>
+                <div class="circle pink"></div>
+                <input type="number" placeholder="Internet" id="internet">
+              </section>
+
+              <section>
+                <div class="circle white"></div>
+                <input type="number" placeholder="Savings" id="savings">
+              </section>
+            </section>
+            <button class="add-button"><strong>+</strong></button>
+          </article>
+          <section class="chart-container">
+            <canvas id="myChart"></canvas>
+          </section>
+        </section>
+      </section>
+  </article>
+  <footer></footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          label: 'Expenses',
+          data: [1, 1, 1, 1, 1, 1, 1, 1],
+          backgroundColor: [
+            '#FF4545',
+            '#45fcff',
+            '#45ff4b',
+            '#FFA845',
+            '#ab45ff',
+            '#f6ff45',
+            '#FF45DA',
+            '#FFF',
+          ],
+          borderColor: [
+            '#000'
+          ],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    let inputs = document.querySelectorAll('.Expenses input');
+    for(input of inputs){
+      input.addEventListener('change', (event) => {
+        console.log(event.target);
+        updateChart();
+      });
+    }
+
+    function updateChart() {
+      let valueArray = [];
+      for(input of inputs){
+        if(input.value != 0){
+          valueArray.push(input.value);
+        } else {
+          valueArray.push(0);
+        }  
+      }
+      // console.log(`Array = ${valueArray}`);
+      let chart = Chart.getChart('myChart');
+      chart.data.datasets[0].data = valueArray;
+      chart.update();
+    }
+  </script>
+</body>
+
+</html>

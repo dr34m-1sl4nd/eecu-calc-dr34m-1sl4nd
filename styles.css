@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: "Work Sans";
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --darkestblue: #04093f;
+    --darkblue: #171869;
+    --midblue: #3860e0;
+    --cyan: #45fcff;
+    --dustyblue: #6886c8;
+    --green: #45ff4b;
+    --purple: #ab45ff;
+    --yellow: #f6ff45;
+    --red: #FF4545;
+    --pink: #FF45DA;
+    --orange: #FFA845;
+}
+
+/* primary tag use */
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: var(--darkestblue);
+    margin: 0;
+}
+
+.Expenses > section > input,
+.Expenses input {
+    background-color: var(--darkblue);
+    border-radius: 16px;
+    border: 3px solid;
+    border-color: var(--white);
+    margin: 5px;
+    min-height: 15%;
+    margin-left: 25px;
+    width: 100%
+}
+
+.Expenses > section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 40%
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 2rem;
+    font-weight: normal;
+    font-size: 4rem;
+}
+
+nav {
+    border-bottom: 7px solid var(--midblue);
+    margin-bottom: 2rem;
+}
+
+
+
+/* classes / ids */
+
+.Expenses {
+    background-color: var(--darkblue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 3rem 0 0 0;
+}
+
+.Expenses input {
+    /* margin-bottom: 1.5rem;   */
+    padding: 1rem 1rem;
+    font-size: 25px;
+    
+}
+
+.Expenses input::placeholder {
+    color: lightgray;
+}
+
+.box {
+    display: flex;
+    background-color: var(--dustyblue);
+    flex-direction: column;
+    align-content: left;
+    border-radius: 2rem;
+    min-width: 90%;
+    align-items: left;
+    height: fit-content;
+    padding: 2%;
+    margin: 3rem 2rem 3rem 2rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: normal;   
+    text-decoration: underline;
+    margin-top: 0;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between
+}
+
+.add-button {
+    align-self: flex-end;
+    background-color: var(--midblue);
+    width: 2.5rem;
+    font-size: 2rem;
+    border-radius: 100%;
+    text-align: center;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--darkblue);
+    width: 50rem;
+    height: 500px;
+    border-radius: 2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* height: fit-content;
+    overflow-y: scroll; */
+}
+
+#career {
+    width: 14.3rem;
+    height: fit-content;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    align-self: flex-end;
+    color: var(--black);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--midblue);
+    height: 6rem;
+    margin-top: 5%;
+}
+
+/* color coding */
+.circle {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.circle.red {
+    background-color: var(--red);
+}
+
+.circle.green {
+    background-color: var(--green);
+}
+
+.circle.purple {
+    background-color: var(--purple);
+}
+
+.circle.pink {
+    background-color: var(--pink);
+}
+
+.circle.cyan {
+    background-color: var(--cyan);
+}
+
+.circle.orange {
+    background-color: var(--orange);
+}
+
+.circle.yellow {
+    background-color: var(--yellow);
+}
+
+.circle.white {
+    background-color: var(--white);
+}
+
+button {
+    border: none;
+}
+
+.chart-container {
+    min-width: 500px;
+    max-width: 500px;
+    margin-right: 10vw;
+}
